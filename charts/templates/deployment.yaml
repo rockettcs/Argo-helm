@@ -21,7 +21,7 @@ spec:
                 values:
                  - dev
       imagePullSecrets:
-        - name: dockersecret-1
+        - name: quay.io
       containers:
         - name: my-app
           image: {{ .Values.image.repository }}
