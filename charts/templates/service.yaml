@@ -19,4 +19,3 @@ spec:
   sessionAffinity: None
   selector:
     app: my-app
-    deployment: my-app
