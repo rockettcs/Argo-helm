@@ -5,10 +5,6 @@ metadata:
   namespace: kartheek-kumar-reddy
   labels:
     app: my-app
-    app.kubernetes.io/component: my-app
-    app.kubernetes.io/instance: my-app
-    app.kubernetes.io/name: my-app
-    app.kubernetes.io/part-of: my-app
 spec:
   host: my-app-kartheek-kumar-reddy.apps.ocp4.imss.work
   to:
