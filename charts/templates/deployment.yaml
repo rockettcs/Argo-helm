@@ -4,7 +4,6 @@ metadata:
   name: my-app
   labels:
     app: my-app
-    deployment: my-app
 spec:
   replicas: 1
   selector:
