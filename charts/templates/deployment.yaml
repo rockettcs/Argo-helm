@@ -7,19 +7,19 @@ spec:
   selector:
     matchLabels:
       app: my-app
+      app.kubernetes.io/component: my-app
+      app.kubernetes.io/instance: my-app
+      app.kubernetes.io/name: my-app
+      app.kubernetes.io/part-of: my-app
   template:
     metadata:
       labels:
         app: my-app
+        app.kubernetes.io/component: my-app
+        app.kubernetes.io/instance: my-app
+        app.kubernetes.io/name: my-app
+        app.kubernetes.io/part-of: my-app
     spec:
-      affinity:
-         requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: environment
-                operator: In
-                values:
-                 - dev
       imagePullSecrets:
         - name: quay.io
       containers:
@@ -27,7 +27,7 @@ spec:
           image: {{ .Values.image.repository }}
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 9090
 #          volumeMounts:
  #           - name: registry-cert
   #            mountPath: "/etc/pki/ca-trust/source/anchors"
