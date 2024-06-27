@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: quay.io/praveenrachamreddy/ci-pipeline:latest
+  repository: quay.io/praveenrachamreddy/kartheek-kumar-reddy/tngb-demo-project:v4
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   #tag: v3
