@@ -1,0 +1,23 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: my-app
+  namespace: kartheek-kumar-reddy
+  labels:
+    app: my-app
+    app.kubernetes.io/component: my-app
+    app.kubernetes.io/instance: my-app
+    app.kubernetes.io/name: my-app
+    app.kubernetes.io/part-of: my-app
+spec:
+  host: my-app-kartheek-kumar-reddy.apps.ocp4.imss.work
+  to:
+    kind: Service
+    name: my-app
+    weight: 100
+  port:
+    targetPort: 9090-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
