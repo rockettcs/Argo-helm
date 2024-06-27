@@ -1,15 +1,26 @@
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
-  name: {{ include "charts.fullname" . }}
+  name: my-app
+  namespace: kartheek-kumar-reddy
   labels:
-    {{- include "charts.labels" . | nindent 4 }}
+    app: my-app
+    app.kubernetes.io/component: my-app
+    app.kubernetes.io/instance: my-app
+    app.kubernetes.io/name: my-app
+    app.kubernetes.io/part-of: my-app
 spec:
-  type: {{ .Values.service.type }}
+  ipFamilies:
+    - IPv4
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - name: 9090-tcp
       protocol: TCP
-      name: http
+      port: 9090
+      targetPort: 9090
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
   selector:
-    {{- include "charts.selectorLabels" . | nindent 4 }}
+    app: my-app
+    deployment: my-app
